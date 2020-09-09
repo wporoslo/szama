@@ -4,10 +4,19 @@ import { View, Text, Image, StyleSheet } from 'react-native'
 const ResultsDetail = ({ result }) => {
   return (
     <View style={styles.card}>
-      <Image style={styles.image} source={{ uri: `${result.image_url}` }} />
+      {result.image_url ? (
+        <Image style={styles.image} source={{ uri: `${result.image_url}` }} />
+      ) : (
+        <View style={{ ...styles.image, backgroundColor: `#CCC` }} />
+      )}
       <Text style={styles.name}>{result.name}</Text>
       <Text style={styles.details}>
-        {result.rating} Gwiazdek, {result.review_count} Rezencji
+        {result.rating} ★ Gwiazdek, {result.review_count}{' '}
+        {result.review_count === 0
+          ? `Rezencja`
+          : result.review_count < 5
+          ? `Recenzje`
+          : `Recenzji`}
       </Text>
     </View>
   )
@@ -16,7 +25,7 @@ const ResultsDetail = ({ result }) => {
 const styles = StyleSheet.create({
   card: {
     marginVertical: 5,
-    marginRight: 15,
+    marginHorizontal: 15,
   },
   image: {
     width: 250,
@@ -24,6 +33,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   name: {
+    marginTop: 5,
     fontWeight: `bold`,
   },
   details: {

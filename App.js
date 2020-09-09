@@ -1,7 +1,8 @@
-import React from "react"
+import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import SearchScreen from './src/screens/SearchScreen'
+import RestaurantScreen from './src/screens/RestaurantScreen'
 
 const Stack = createStackNavigator()
 
@@ -12,7 +13,12 @@ const App = () => {
         <Stack.Screen
           name='Search'
           component={SearchScreen}
-          options={{ title: 'Business Search' }}
+          options={{ title: 'Szama' }}
+        />
+        <Stack.Screen
+          name='Result'
+          component={RestaurantScreen}
+          options={{ title: 'Szczegóły' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
