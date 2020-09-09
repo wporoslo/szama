@@ -6,14 +6,13 @@ const SearchScreen = () => {
   return (
     <View style={styles.search}>
       <SearchBar />
-      <Text>Search</Text>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   search: {
-    backgroundColor: `red`,
+    marginTop: 15,
   },
 })
 
