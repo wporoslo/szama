@@ -11,7 +11,7 @@ import ResultsDetail from './ResultsDetail'
 
 const ResultsList = ({ title, results }) => {
   const navigation = useNavigation()
-  
+
   return (
     <View style={results < 1 ? styles.hide : styles.list}>
       <Text style={styles.title}>{title}</Text>
@@ -27,6 +27,7 @@ const ResultsList = ({ title, results }) => {
                 navigation.dispatch(
                   CommonActions.navigate({
                     name: 'Result',
+                    params: { id: item.id },
                   })
                 )
               }

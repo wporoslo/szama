@@ -25,7 +25,7 @@ const ResultsDetail = ({ result }) => {
 const styles = StyleSheet.create({
   card: {
     marginVertical: 5,
-    marginHorizontal: 15,
+    marginLeft: 15,
   },
   image: {
     width: 250,
