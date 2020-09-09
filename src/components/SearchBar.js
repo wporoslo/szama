@@ -33,10 +33,10 @@ const styles = StyleSheet.create({
   textInput: {
     flex: 1,
     paddingLeft: 10,
-    fontSize: 18,
+    fontSize: 16,
   },
   icon: {
-    fontSize: 35,
+    fontSize: 24,
     alignSelf: `center`,
     marginLeft: 10,
   },
