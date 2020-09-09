@@ -1,5 +1,5 @@
 import React from 'react'
-import { CommonActions } from '@react-navigation/native'
+import { useNavigation, CommonActions } from '@react-navigation/native'
 import {
   View,
   Text,
@@ -9,7 +9,9 @@ import {
 } from 'react-native'
 import ResultsDetail from './ResultsDetail'
 
-const ResultsList = ({ title, results, navigation }) => {
+const ResultsList = ({ title, results }) => {
+  const navigation = useNavigation()
+  
   return (
     <View style={results < 1 ? styles.hide : styles.list}>
       <Text style={styles.title}>{title}</Text>
