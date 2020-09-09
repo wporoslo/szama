@@ -12,8 +12,12 @@ import ResultsDetail from './ResultsDetail'
 const ResultsList = ({ title, results }) => {
   const navigation = useNavigation()
 
+  if (!results.length) {
+    return null
+  }
+
   return (
-    <View style={results < 1 ? styles.hide : styles.list}>
+    <View style={styles.list}>
       <Text style={styles.title}>{title}</Text>
       <View>
         <FlatList
@@ -42,9 +46,6 @@ const ResultsList = ({ title, results }) => {
 }
 
 const styles = StyleSheet.create({
-  hide: {
-    display: `none`,
-  },
   list: {
     marginVertical: 10,
   },
